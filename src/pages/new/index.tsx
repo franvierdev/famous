@@ -113,7 +113,7 @@ export default function New() {
             <p className="ml-2 ">TALENTOS</p>
             <p className="max-sm:ml-24  ml-40 ">Y MARCAS</p>
           </div>
-          <div className="max-sm:order-3  max-[1734px]:text-[2.35vw] text-[2.5rem] max-sm:text-3xl sm:mt-64 sm:pr-14 px-8 max-sm:text-center leading-snug ">
+          <div className="max-sm:order-3  max-[1734px]:text-[2.35vw] text-[2.5rem] max-sm:-mt-20 max-sm:text-2xl sm:mt-64 sm:pr-14 px-10 max-sm:text-center leading-snug ">
             <p>
               Somos una agencia dedicada a representar a los mejores talentos de
               redes sociales de la comunidad US Hispanic.<br></br>
@@ -142,20 +142,20 @@ export default function New() {
                 para los talentos
               </Link>
             </div>
-            <div className=" flex flex-col max-w-md items-center text-center text-[#EFDEC6] z-10 sm:mt-12 max-sm:mt-4 px-9 max-sm:px-16 max-sm:gap-2  lg:gap-3 xl:gap-3 2xl:-gap-6 max-sm:text-sm max-[1734px]:text-[1.4vw] text-[1.4rem] ">
+            <div className=" flex flex-col max-w-md items-center text-center text-[#EFDEC6] z-10 sm:mt-12 max-sm:mt-4 px-9 max-sm:px-16 max-sm:gap-4  lg:gap-3 xl:gap-3 2xl:-gap-6 max-sm:text-xl max-[1734px]:text-[1.4vw] text-[1.4rem] ">
               <Image
                 src={"/assets/images/new/nube-negra.png"}
                 alt="/"
                 width={1360 / 2}
                 height={1306 / 2}
-                className="absolute  max-sm:px-4  xl:-mt-4  -z-10 max-[1734px]:w-[39vw]"
+                className="absolute  max-sm:px-8  xl:-mt-4  -z-10 max-sm:w-full max-[1734px]:w-[39vw]"
               />
               <Image
                 src={"/assets/images/new/estrella.png"}
                 alt="/"
                 width={63 / 2}
                 height={63 / 2}
-                className=" max-sm:mt-4  mt-14"
+                className=" max-sm:mt-14  mt-14"
               />
               <p className="">Consultoria</p>
               <p>
