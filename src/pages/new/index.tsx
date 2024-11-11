@@ -16,7 +16,7 @@ export default function New() {
             alt="/"
             height={48}
             width={144}
-            className="place-self-start"
+            className="place-self-start max-sm:w-1/3"
           />
 
           <button onClick={handleSubmit} className=" h-8 sm:hidden">
@@ -93,27 +93,27 @@ export default function New() {
           </div>
         </div>
       </header>
-      <div className=" bg-[#EFDEC6] ">
-        <div className="  lg:mt-32 max-sm:flex flex-col lg:grid lg:grid-cols-2  lg:px-28 max-w-[1734px] mx-auto ">
-          <div className="max-sm:order-2">
+      <div className=" bg-[#EFDEC6]  ">
+        <div className="  sm:mt-20 max-sm:flex flex-col lg:grid lg:grid-cols-2  lg:px-28 max-w-[1734px] mx-auto ">
+          <div className="max-sm:order-2 ">
             <Image
               src={"/assets/images/new/capa-1.png"}
               alt="/"
               width={1586 / 2}
               height={2040 / 2}
-              className="lg:absolute mt-10 max-sm:pl-14 sm:-mt-20"
+              className="sm:absolute mt-10 max-sm:pl-10 pl-10 xl:pl-0 max-2xl:max-w-2xl max-xl:max-w-3xl max-lg:w-2/4  sm:-mt-20"
             />
           </div>
-          <div className=" max-sm:order-1 sm:max-[1734px]:text-[4.2vw] max-sm:mx-auto max-sm:text-4xl sm:text-7xl font-semibold italic sm:leading-[1.1]  sm:pl-20 ">
-            <p className="ml-8">CREAMOS</p>
-            <p className="ml-32 ">CONEXIONES</p>
+          <div className=" max-sm:order-1 max-[1734px]:text-[4.2vw] max-sm:mx-auto max-sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[4.9rem] font-semibold italic max-sm:pe-4 leading-[1.1] lg:pl-40 xl:pl-20 2xl:pl-14 ">
+            <p className="max-sm:ml-2 ml-8">CREAMOS</p>
+            <p className="max-sm:ml-20 ml-32 ">CONEXIONES</p>
 
-            <p className="ml-12  ">VALIOSAS</p>
-            <p className="ml-52  ">ENTRE</p>
+            <p className="max-sm:ml-8 ml-12  ">VALIOSAS</p>
+            <p className="max-sm:ml-28 ml-52  ">ENTRE</p>
             <p className="ml-2 ">TALENTOS</p>
-            <p className="ml-40 ">Y MARCAS</p>
+            <p className="max-sm:ml-24  ml-40 ">Y MARCAS</p>
           </div>
-          <div className="max-sm:order-3 max-sm:-mt-32 sm:max-[1734px]:text-[2.35vw] text-[2.6rem] max-sm:text-3xl sm:mt-64 sm:pr-14 px-10 text-center leading-snug ">
+          <div className="max-sm:order-3  max-[1734px]:text-[2.35vw] text-[2.5rem] max-sm:text-3xl sm:mt-64 sm:pr-14 px-8 max-sm:text-center leading-snug ">
             <p>
               Somos una agencia dedicada a representar a los mejores talentos de
               redes sociales de la comunidad US Hispanic.<br></br>
@@ -123,38 +123,39 @@ export default function New() {
               conexión.
             </p>
           </div>
-          <div className="max-sm:order-4 mt-36 flex flex-col  items-center  sm:max-[1734px]:text-[1.3vw] max-sm:text-3xl text-[1.4rem] text-md ">
-            {" "}
-            <Image
-              src={"/assets/images/new/vector-2.png"}
-              alt="/"
-              width={971 / 2}
-              height={593 / 2}
-              className="absolute  sm:max-[1734px]:w-[28vw] "
-            />
-            <Link
-              href={"/"}
-              className="max-sm:mt-20 lg:mt-14 xl:mt-10 2xl:mt-16 z-10"
-            >
-              para las marcas
-            </Link>
-            <Link href={"/"} className="max-sm:mt-8 lg:mt-8 xl:mt-12 z-10">
-              para los talentos
-            </Link>
-            <div className=" flex flex-col max-w-md items-center text-center text-[#EFDEC6] z-10 mt-28 px-9 max-sm:gap-2  lg:gap-3 xl:gap-3 2xl:-gap-6 max-sm:text-2xl sm:max-[1734px]:text-[1.3vw] text-[1.4rem] ">
+          <div className="max-sm:order-4 max-sm:mt-10 mt-36 flex flex-col  items-center  max-[1734px]:text-[1.3vw] max-sm:text-xl text-[1.4rem]  ">
+            <div className="flex flex-col items-center">
+              <Image
+                src={"/assets/images/new/vector-2.png"}
+                alt="/"
+                width={971 / 2}
+                height={593 / 2}
+                className="absolute   px-10"
+              />
+              <Link
+                href={"/"}
+                className="max-sm:mt-8 sm:mt-14 xl:mt-10 2xl:mt-14 z-10"
+              >
+                para las marcas
+              </Link>
+              <Link href={"/"} className="mt-6 xl:mt-8 z-10">
+                para los talentos
+              </Link>
+            </div>
+            <div className=" flex flex-col max-w-md items-center text-center text-[#EFDEC6] z-10 sm:mt-12 max-sm:mt-4 px-9 max-sm:px-16 max-sm:gap-2  lg:gap-3 xl:gap-3 2xl:-gap-6 max-sm:text-sm max-[1734px]:text-[1.4vw] text-[1.4rem] ">
               <Image
                 src={"/assets/images/new/nube-negra.png"}
                 alt="/"
                 width={1360 / 2}
                 height={1306 / 2}
-                className="absolute max-sm:-mt-20 max-sm:px-8 lg:-mt-20 xl:-mt-28 2xl:-mt-16 -z-10 sm:max-[1734px]:w-[39vw]"
+                className="absolute  max-sm:px-4  xl:-mt-4  -z-10 max-[1734px]:w-[39vw]"
               />
               <Image
                 src={"/assets/images/new/estrella.png"}
                 alt="/"
                 width={63 / 2}
                 height={63 / 2}
-                className=" max-sm:-mt-10 xl:-mt-10 2xl:-mt-0"
+                className=" max-sm:mt-4  mt-14"
               />
               <p className="">Consultoria</p>
               <p>
@@ -188,10 +189,10 @@ export default function New() {
             alt="/"
             width={1305 / 2}
             height={2074 / 2}
-            className="absolute sm:max-[1734px]:w-[38vw] max-sm:w-3/4 max-sm:-mt-36 -mt-28"
+            className="absolute max-[1734px]:w-[38vw] max-sm:w-3/4 max-sm:-mt-36 -mt-28"
           />
-          <div className="flex flex-col  mt-80 text-[#EFDEC6] font-medium leading-snug">
-            <p className="sm:max-[1734px]:text-[15vw] justify-center max-sm:text-8xl text-[16rem] italic z-10">
+          <div className="flex flex-col  max-sm:mt-72 mt-80 text-[#EFDEC6] font-medium ">
+            <p className="max-[1734px]:text-[15vw] justify-center max-sm:text-7xl  text-[16rem] italic z-10">
               SOMOS <br />
               LATINOS
             </p>
