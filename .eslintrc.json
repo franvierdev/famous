@@ -1,0 +1,13 @@
+{
+  "extends": "next/core-web-vitals",
+  "plugins": ["formatjs"],
+  "rules": {
+    "formatjs/no-literal-string-in-jsx": ["warn"],
+    "formatjs/enforce-id": [
+      "error",
+      {
+        "idInterpolationPattern": "[sha512:contenthash:base64:6]"
+      }
+    ]
+  }
+}
