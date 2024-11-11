@@ -104,9 +104,10 @@ export default function New() {
               className="lg:absolute mt-10 max-sm:pl-14 sm:-mt-20"
             />
           </div>
-          <div className=" max-sm:order-1 sm:max-[1734px]:text-[4.2vw] max-sm:mx-auto max-sm:text-6xl text-7xl font-semibold italic sm:leading-[1.1]  sm:pl-20 ">
+          <div className=" max-sm:order-1 sm:max-[1734px]:text-[4.2vw] max-sm:mx-auto max-sm:text-6xl sm:text-7xl font-semibold italic sm:leading-[1.1]  sm:pl-20 ">
             <p className="ml-8">CREAMOS</p>
             <p className="ml-32 ">CONEXIONES</p>
+
             <p className="ml-12  ">VALIOSAS</p>
             <p className="ml-52  ">ENTRE</p>
             <p className="ml-2 ">TALENTOS</p>
