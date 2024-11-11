@@ -54,7 +54,7 @@ export default function New() {
           className={
             open
               ? "flex max-sm:flex-col max-sm:absolute max-sm:mt-10  gap-4  max-sm:self-end max-sm:text-end sm:ml-24 sm:-mt-6 "
-              : "max-sm:hidden flex max-sm:flex-col  gap-4 justify-center  ml-24 -mt-6"
+              : "max-sm:hidden flex max-sm:flex-col  gap-4 justify-center  ml-32 -mt-6"
           }
         >
           <Image
@@ -101,7 +101,7 @@ export default function New() {
               alt="/"
               width={1586 / 2}
               height={2040 / 2}
-              className="sm:absolute mt-10 max-sm:pl-10 pl-10 xl:pl-0 max-2xl:max-w-2xl max-xl:max-w-3xl max-lg:w-2/4  sm:-mt-20"
+              className="sm:absolute mt-10 max-sm:pl-10 pl-10 xl:pl-0  max-2xl:max-w-2xl max-xl:max-w-3xl max-sm:w-full max-lg:w-2/4  sm:-mt-20"
             />
           </div>
           <div className=" max-sm:order-1 max-[1734px]:text-[4.2vw] max-sm:mx-auto max-sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[4.9rem] font-semibold italic max-sm:pe-4 leading-[1.1] lg:pl-40 xl:pl-20 2xl:pl-14 ">
