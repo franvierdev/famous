@@ -53,7 +53,7 @@ export default function New() {
         <div
           className={
             open
-              ? "flex max-sm:flex-col max-sm:absolute max-sm:mt-10  gap-4 justify-center max-sm:self-end max-sm:text-end sm:ml-24 sm:-mt-6 "
+              ? "flex max-sm:flex-col max-sm:absolute max-sm:mt-10  gap-4  max-sm:self-end max-sm:text-end sm:ml-24 sm:-mt-6 "
               : "max-sm:hidden flex max-sm:flex-col  gap-4 justify-center  ml-24 -mt-6"
           }
         >
@@ -62,7 +62,7 @@ export default function New() {
             width={482}
             height={171}
             alt="vector-navbar"
-            className="absolute -mt-10 max-sm:hidden "
+            className="absolute -mt-10  max-sm:hidden "
           />
           <Link href={"/"} className="z-10">
             nuestra casa
@@ -112,7 +112,7 @@ export default function New() {
             <p className="ml-2 ">TALENTOS</p>
             <p className="ml-40 ">Y MARCAS</p>
           </div>
-          <div className="max-sm:order-3 max-sm:-mt-32 sm:max-[1734px]:text-[2.35vw] text-[2.6rem] sm:mt-64 sm:pr-14 px-10 text-center leading-snug ">
+          <div className="max-sm:order-3 max-sm:-mt-32 sm:max-[1734px]:text-[2.35vw] text-[2.6rem] max-sm:text-3xl sm:mt-64 sm:pr-14 px-10 text-center leading-snug ">
             <p>
               Somos una agencia dedicada a representar a los mejores talentos de
               redes sociales de la comunidad US Hispanic.<br></br>
@@ -153,7 +153,7 @@ export default function New() {
                 alt="/"
                 width={63 / 2}
                 height={63 / 2}
-                className=" max-sm:-mt-10 lg:-mt-10 xl:-mt-8"
+                className=" max-sm:-mt-10 xl:-mt-10 2xl:-mt-0"
               />
               <p className="">Consultoria</p>
               <p>
@@ -238,7 +238,4 @@ export default function New() {
       </div>
     </div>
   );
-}
-function preventDefault() {
-  throw new Error("Function not implemented.");
 }
