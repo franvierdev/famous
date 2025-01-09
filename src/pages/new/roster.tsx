@@ -50,7 +50,7 @@ export default function Roster() {
           <h2 className="text-[2.75rem] italic ">
             Holistic health coach-personal trainer
           </h2>
-          <div className="flex items-center gap-7 pl-2 font-extrabold mt-8">
+          <div className="flex items-center gap-7 pl-2 font-extrabold mt-8  ">
             <Image
               src={"/assets/images/new/roster/ellipse.png"}
               alt="/"

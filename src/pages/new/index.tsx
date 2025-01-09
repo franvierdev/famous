@@ -64,11 +64,17 @@ export default function New() {
             alt="vector-navbar"
             className="absolute -mt-10  max-sm:hidden "
           />
-          <Link href={"/"} className="z-10">
-            nuestra casa
+          <Link
+            href={"/"}
+            className="z-10 hover:bg-[url('/assets/images/new/underline.png')] bg-contain bg-bottom bg-no-repeat bg-absolute  "
+          >
+            <p className="mb-2"> nuestra casa</p>
           </Link>
-          <Link href={"/"} className="z-10">
-            nuestra familia
+          <Link
+            href={"/"}
+            className="z-10  hover:bg-[url('/assets/images/new/underline.png')] bg-contain bg-bottom  bg-no-repeat bg-absolute"
+          >
+            <p className="mb-3"> nuestra familia</p>
           </Link>
         </div>
         <div
@@ -134,15 +140,18 @@ export default function New() {
               />
               <Link
                 href={"/"}
-                className="max-sm:mt-8 sm:mt-14 xl:mt-10 2xl:mt-14 z-10"
+                className="max-sm:mt-8 sm:mt-14 xl:mt-10 2xl:mt-14 z-10 hover:bg-[url('/assets/images/new/underline.png')] bg-contain bg-bottom bg-no-repeat bg-absolute"
               >
-                para las marcas
+                <p className="mb-2"> para las marcas</p>
               </Link>
-              <Link href={"/"} className="mt-6 xl:mt-8 z-10">
-                para los talentos
+              <Link
+                href={"/"}
+                className="mt-6 xl:mt-8 z-10 hover:bg-[url('/assets/images/new/underline.png')] bg-contain bg-bottom bg-no-repeat bg-absolute"
+              >
+                <p className="mb-2"> para los talentos</p>
               </Link>
             </div>
-            <div className=" flex flex-col max-w-md items-center text-center text-[#EFDEC6] z-10 sm:mt-12 max-sm:mt-6 px-9 max-sm:px-20 max-sm:gap-2  lg:gap-3 xl:gap-3 2xl:-gap-6 max-sm:text-base max-[1734px]:text-[1.4vw] text-[1.4rem] ">
+            <div className=" flex flex-col max-w-md items-center text-center text-[#EFDEC6] z-10 sm:mt-8 max-sm:mt-6 px-9 max-sm:px-20 max-sm:gap-2  lg:gap-3 xl:gap-3 2xl:-gap-6 max-sm:text-base max-[1734px]:text-[1.4vw] text-[1.4rem] ">
               <Image
                 src={"/assets/images/new/nube-negra.png"}
                 alt="/"

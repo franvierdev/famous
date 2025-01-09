@@ -2,3 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.underline-onda {
+  background-image: url("/assets/images/new/underline.png");
+}
