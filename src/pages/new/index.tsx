@@ -141,14 +141,20 @@ export default function New() {
                     className=" absolute -mt-4 -mr-[90px] "
                   />
                   <li className="wave-underline-1 mt-2  w-36 ">
-                    <a className="self-center hover:bg-transparent hover:text-[#EFDEC6]">
+                    <Link
+                      href={"/"}
+                      className=" self-center  hover:bg-transparent hover:text-[#EFDEC6]"
+                    >
                       talentos
-                    </a>
+                    </Link>
                   </li>
                   <li className="wave-underline-1 w-36 ">
-                    <a className="self-center hover:bg-transparent hover:text-[#EFDEC6]">
+                    <Link
+                      href={"/"}
+                      className="self-center hover:bg-transparent hover:text-[#EFDEC6]"
+                    >
                       equipo
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
