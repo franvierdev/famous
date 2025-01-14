@@ -2,7 +2,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FormattedMessage, useIntl } from "react-intl";
+import { Locale } from "nextjs-routes";
+import { useRouter } from "next/router";
+import classes from "clsx";
 export default function New() {
+  const router = useRouter();
+  const { pathname, query, asPath } = router;
+  const { formatMessage, locale: currentLocale } = useIntl();
+
+  const localesData: Record<Locale, { name: string }> = {
+    "es-MX": {
+      name: formatMessage({
+        defaultMessage: "Español",
+        id: "dX8jTq",
+      }),
+    },
+    "en-US": {
+      name: formatMessage({
+        defaultMessage: "Inglés",
+        id: "NDZDj1",
+      }),
+    },
+  };
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
@@ -81,7 +103,7 @@ export default function New() {
     <div className=" bg-[#EFDEC6] text-black font-bold  ">
       <header className="  flex max-sm:flex-col max-sm:pt-6 justify-between text-2xl place-items-center pb-16 max-w-[1734px] px-8  mx-auto ">
         {/* ----- */}
-        <div className="navbar  ">
+        <div className="navbar flex justify-between ">
           <div className="flex-1 px-2 lg:flex-none">
             <Image
               src={"/assets/images/fm-logo.png"}
@@ -91,7 +113,7 @@ export default function New() {
               className="place-self-start "
             />
           </div>
-          <div className="flex justify-center flex-1  ">
+          <div className="flex justify-center  ">
             <Image
               src={"/assets/images/navbar-vector.png"}
               width={482}
@@ -132,7 +154,7 @@ export default function New() {
               </div>
             </div>
           </div>
-          <div className="flex justify-end gap-4 pt-4 ">
+          <div className="flex  gap-4 pt-4 ">
             <Link href={"/"} className="max-sm:w-36">
               <Image
                 src={"/assets/images/hablemos-button.png"}
@@ -142,9 +164,22 @@ export default function New() {
                 className=""
               />
             </Link>
-            <div className="flex gap-2 ">
-              <button>en</button>
-              <button>es</button>
+            <div
+              title={formatMessage({
+                defaultMessage: "Cambiar idioma",
+                id: "1tabNN",
+              })}
+              className="flex gap-2 "
+            >
+              {Object.entries(localesData).map(([locale, { name }]) => (
+                <div key={locale}>
+                  <Link href={{ pathname, query }} as={asPath} locale={locale}>
+                    <span className="flex flex-1 justify-between">
+                      {name.substring(0, 2)}
+                    </span>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -249,7 +284,7 @@ export default function New() {
             </p>
           </div>
         </div>
-        <div className="relative bg-zinc-900 text-[#EFDEC6] font-bold italic text-4xl ">
+        <div className="relative bg-black text-[#EFDEC6] font-bold italic text-4xl ">
           <div className="flex flex-col items-center text-center max-w-xl mx-auto gap-14 py-14 max-sm:px-4">
             <Image
               src={"/assets/images/new/estrella-x2.png"}
@@ -289,6 +324,17 @@ export default function New() {
           </div>
         </div>
       </div>
+      <footer className="bg-black pb-10 pt-5 ">
+        <div className="max-w-[1734px] justify-between flex mx-auto px-28 text-[#EFDEC6] text-xl font-light">
+          <div className="flex   gap-10 ">
+            <p>Términos y condiciones</p>
+            <p>Políticas de privacidad</p>
+          </div>
+          <div>
+            <p>© 2025 Famosos, Inc. Todos los derechos reservados</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
