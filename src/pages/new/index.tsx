@@ -103,16 +103,13 @@ export default function New() {
               <Link href={"/"} className=" text-2xl wave-underline-1">
                 nuestra casa
               </Link>
-              <div className="dropdown dropdown-end">
-                <label
-                  tabIndex={0}
-                  className="cursor-pointer text-2xl wave-underline "
-                >
+              <div className="dropdown dropdown-end dropdown-hover">
+                <label tabIndex={0} className="cursor-pointer text-2xl ">
                   nuestra familia
                 </label>
                 <ul
                   tabIndex={0}
-                  className="menu dropdown-content  mt-2 items-end w-80 "
+                  className="menu dropdown-content  mt-8 items-end w-80 "
                 >
                   <Image
                     src={"/assets/images/new/pink-cloud.png"}
@@ -153,7 +150,7 @@ export default function New() {
         </div>
       </header>
       <div className=" bg-[#EFDEC6]  ">
-        <div className="  sm:mt-20 max-sm:flex flex-col lg:grid lg:grid-cols-2  lg:px-28 max-w-[1734px] mx-auto ">
+        <div className="  sm:mt-28 max-sm:flex flex-col lg:grid lg:grid-cols-2  lg:px-28 max-w-[1734px] mx-auto ">
           <div className="max-sm:order-2 ">
             <Image
               src={"/assets/images/new/capa-1.png"}
