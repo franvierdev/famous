@@ -3,99 +3,152 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 export default function New() {
-  const [open, setOpen] = useState(false);
-  const handleSubmit = () => {
-    setOpen(!open);
+  const [activeTab, setActiveTab] = useState(0);
+
+  const tabs = [
+    {
+      id: 0,
+      title: <p className="mb-4">para las marcas</p>,
+      content: (
+        <div className="flex flex-col items-center gap-4">
+          <Image
+            src={"/assets/images/new/estrella.png"}
+            alt="/"
+            width={63 / 2}
+            height={63 / 2}
+            className="  max-sm:mt-6 max-sm:w-5  mt-14"
+          />
+          <p className="">Consultoria</p>
+          <p>
+            Asesoramiento para conectar efectivamente con la comunidad hispana y
+            estrategias de campaña dirigidas.
+          </p>
+          <Image
+            src={"/assets/images/new/estrella.png"}
+            alt="/"
+            width={63 / 2}
+            height={63 / 2}
+            className="max-sm:w-5 "
+          />
+          <p>Monitoreo y Análisis</p>
+          <p>
+            Seguimiento y análisis de las campañas y colaboraciones para medir
+            el impacto y ajustar las estrategias.
+          </p>
+        </div>
+      ),
+    },
+    {
+      id: 1,
+      title: <p className="mb-4">para los talentos</p>,
+      content: (
+        <div className="flex  flex-col items-center gap-4 max-2xl:gap-2">
+          <Image
+            src={"/assets/images/new/estrella.png"}
+            alt="/"
+            width={63 / 2}
+            height={63 / 2}
+            className="  max-sm:mt-6 max-sm:w-5  mt-14"
+          />
+          <p className="">Gestión</p>
+          <p>
+            Representación integral para talentos en sus redes sociales,
+            incluyendo negociación de contratos, planificación de carrera y
+            desarrollo de marca personal.
+          </p>
+          <Image
+            src={"/assets/images/new/estrella.png"}
+            alt="/"
+            width={63 / 2}
+            height={63 / 2}
+            className="max-sm:w-5 "
+          />
+          <p>Booking</p>
+          <p>
+            Comercialización de talentos para ofrecer campañas en sus redes
+            sociales, incluyendo la gestión de la campaña.
+          </p>
+        </div>
+      ),
+    },
+  ];
+
+  const handleTabClick = (index: any) => {
+    setActiveTab(index);
   };
+
   return (
     <div className=" bg-[#EFDEC6] text-black font-bold  ">
       <header className="  flex max-sm:flex-col max-sm:pt-6 justify-between text-2xl place-items-center pb-16 max-w-[1734px] px-8  mx-auto ">
-        <div className="flex place-items-start max-sm:justify-between max-sm:w-full">
-          <Image
-            src={"/assets/images/fm-logo.png"}
-            alt="/"
-            height={48}
-            width={144}
-            className="place-self-start max-sm:w-1/3"
-          />
-
-          <button onClick={handleSubmit} className=" h-8 sm:hidden">
-            {open === false ? (
-              <svg
-                width="6"
-                height="23"
-                viewBox="0 0 6 23"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="2.917" cy="2.917" r="2.917" fill="#000"></circle>
-                <circle cx="2.917" cy="11.249" r="2.917" fill="#000"></circle>
-                <circle cx="2.917" cy="19.585" r="2.917" fill="#000"></circle>
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="black"
-                className="h-8 -mr-2  z-10 "
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
-        <div
-          className={
-            open
-              ? "flex max-sm:flex-col max-sm:absolute max-sm:mt-10  gap-4  max-sm:self-end max-sm:text-end sm:ml-24 sm:-mt-6 "
-              : "max-sm:hidden flex max-sm:flex-col  gap-4 justify-center  ml-32 -mt-6"
-          }
-        >
-          <Image
-            src={"/assets/images/navbar-vector.png"}
-            width={482}
-            height={171}
-            alt="vector-navbar"
-            className="absolute -mt-10  max-sm:hidden "
-          />
-          <Link
-            href={"/"}
-            className="z-10 hover:bg-[url('/assets/images/new/underline.png')] bg-contain bg-bottom bg-no-repeat bg-absolute  "
-          >
-            <p className="mb-2"> nuestra casa</p>
-          </Link>
-          <Link
-            href={"/"}
-            className="z-10  hover:bg-[url('/assets/images/new/underline.png')] bg-contain bg-bottom  bg-no-repeat bg-absolute"
-          >
-            <p className="mb-3"> nuestra familia</p>
-          </Link>
-        </div>
-        <div
-          className={
-            open
-              ? "flex max-sm:flex-col  max-sm:absolute max-sm:mt-32 max-sm:self-end max-sm:text-end sm:gap-8 justify-center ml-24  sm:mt-4"
-              : "max-sm:hidden flex max-sm:flex-col  gap-8 justify-center ml-24 sm:mt-6 "
-          }
-        >
-          <Link href={"/"} className="max-sm:w-36">
+        {/* ----- */}
+        <div className="navbar  ">
+          <div className="flex-1 px-2 lg:flex-none">
             <Image
-              src={"/assets/images/hablemos-button.png"}
+              src={"/assets/images/fm-logo.png"}
               alt="/"
-              width={170}
-              height={106}
-              className=""
+              height={48}
+              width={144}
+              className="place-self-start "
             />
-          </Link>
-          <div className="flex gap-2 max-sm:self-end">
-            <button>en</button>
-            <button>es</button>
+          </div>
+          <div className="flex justify-center flex-1  ">
+            <Image
+              src={"/assets/images/navbar-vector.png"}
+              width={482}
+              height={171}
+              alt="vector-navbar"
+              className="absolute mt-8  "
+            />
+            <div className="flex  gap-6 z-10">
+              <Link href={"/"} className=" text-2xl wave-underline-1">
+                nuestra casa
+              </Link>
+              <div className="dropdown dropdown-end">
+                <label
+                  tabIndex={0}
+                  className="cursor-pointer text-2xl wave-underline "
+                >
+                  nuestra familia
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="menu dropdown-content  mt-2 items-end w-80 "
+                >
+                  <Image
+                    src={"/assets/images/new/pink-cloud.png"}
+                    width={711}
+                    height={433}
+                    alt="vector-navbar"
+                    className=" absolute -mt-4 -mr-[90px] "
+                  />
+                  <li className="wave-underline-1 mt-2  w-36 ">
+                    <a className="self-center hover:bg-transparent hover:text-[#EFDEC6]">
+                      talentos
+                    </a>
+                  </li>
+                  <li className="wave-underline-1 w-36 ">
+                    <a className="self-center hover:bg-transparent hover:text-[#EFDEC6]">
+                      equipo
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-end gap-4 pt-4 ">
+            <Link href={"/"} className="max-sm:w-36">
+              <Image
+                src={"/assets/images/hablemos-button.png"}
+                alt="/"
+                width={170}
+                height={106}
+                className=""
+              />
+            </Link>
+            <div className="flex gap-2 ">
+              <button>en</button>
+              <button>es</button>
+            </div>
           </div>
         </div>
       </header>
@@ -129,60 +182,51 @@ export default function New() {
               conexión.
             </p>
           </div>
-          <div className="max-sm:order-4 max-sm:mt-10 mt-36 flex flex-col  items-center  max-[1734px]:text-[1.3vw] max-sm:text-xl text-[1.4rem]  ">
-            <div className="flex flex-col items-center">
+
+          <div className=" max-sm:order-4 max-sm:mt-10 mt-36 flex flex-col  items-center  max-[1734px]:text-[1.3vw] max-sm:text-xl text-[1.4rem]">
+            <ul
+              id="default-tab"
+              data-tabs-toggle="#default-tab-content"
+              role="tablist"
+              className="flex flex-col items-center"
+            >
               <Image
                 src={"/assets/images/new/vector-2.png"}
                 alt="/"
                 width={971 / 2}
                 height={593 / 2}
-                className="absolute  max-sm:w-5/6 px-10"
+                className="absolute z-10 max-sm:w-5/6 px-10"
               />
-              <Link
-                href={"/"}
-                className="max-sm:mt-8 sm:mt-14 xl:mt-10 2xl:mt-14 z-10 hover:bg-[url('/assets/images/new/underline.png')] bg-contain bg-bottom bg-no-repeat bg-absolute"
-              >
-                <p className="mb-2"> para las marcas</p>
-              </Link>
-              <Link
-                href={"/"}
-                className="mt-6 xl:mt-8 z-10 hover:bg-[url('/assets/images/new/underline.png')] bg-contain bg-bottom bg-no-repeat bg-absolute"
-              >
-                <p className="mb-2"> para los talentos</p>
-              </Link>
-            </div>
-            <div className=" flex flex-col max-w-md items-center text-center text-[#EFDEC6] z-10 sm:mt-8 max-sm:mt-6 px-9 max-sm:px-20 max-sm:gap-2  lg:gap-3 xl:gap-3 2xl:-gap-6 max-sm:text-base max-[1734px]:text-[1.4vw] text-[1.4rem] ">
+              {tabs.map((tab, index) => (
+                <li
+                  key={tab.id}
+                  className="max-sm:mt-8 sm:mt-14 xl:mt-10 2xl:mt-10 z-10 hover:bg-[url('/assets/images/new/underline.png')] bg-contain bg-bottom bg-no-repeat bg-absolute"
+                >
+                  <button
+                    className={`-mt-4  ${
+                      index === activeTab
+                        ? " text-[#AC4A86] bg-[url('/assets/images/new/underline.png')]  bg-contain bg-bottom bg-no-repeat "
+                        : ""
+                    }`}
+                    onClick={() => handleTabClick(index)}
+                  >
+                    {tab.title}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div
+              id="default-tab-content"
+              className=" flex flex-col max-w-md items-center text-center text-[#EFDEC6] z-10  max-sm:mt-6 px-9 max-sm:px-20 max-sm:gap-2  lg:gap-3 xl:gap-3 2xl:-gap-6 max-sm:text-base max-[1734px]:text-[1.4vw] text-[1.4rem] "
+            >
               <Image
                 src={"/assets/images/new/nube-negra.png"}
                 alt="/"
                 width={1360 / 2}
                 height={1306 / 2}
-                className="absolute  max-sm:px-8  xl:-mt-4  -z-10 max-sm:w-full max-[1734px]:w-[39vw]"
+                className="absolute  max-sm:px-8    -z-10 max-sm:w-full max-[1734px]:w-[39vw]"
               />
-              <Image
-                src={"/assets/images/new/estrella.png"}
-                alt="/"
-                width={63 / 2}
-                height={63 / 2}
-                className=" max-sm:mt-6 max-sm:w-5  mt-14"
-              />
-              <p className="">Consultoria</p>
-              <p>
-                Asesoramiento para conectar efectivamente con la comunidad
-                hispana y estrategias de campaña dirigidas.
-              </p>
-              <Image
-                src={"/assets/images/new/estrella.png"}
-                alt="/"
-                width={63 / 2}
-                height={63 / 2}
-                className="max-sm:w-5"
-              />
-              <p>Monitoreo y Análisis</p>
-              <p>
-                Seguimiento y análisis de las campañas y colaboraciones para
-                medir el impacto y ajustar las estrategias.
-              </p>
+              {tabs[activeTab].content}
             </div>
           </div>
         </div>
