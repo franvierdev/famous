@@ -42,13 +42,13 @@ export default function New() {
       id: 1,
       title: <p className="mb-4">para los talentos</p>,
       content: (
-        <div className="flex  flex-col items-center gap-4 max-2xl:gap-2">
+        <div className="flex  flex-col items-center max-2xl:gap-2  gap-3  ">
           <Image
             src={"/assets/images/new/estrella.png"}
             alt="/"
             width={63 / 2}
             height={63 / 2}
-            className="  max-sm:mt-6 max-sm:w-5  mt-14"
+            className="  max-sm:mt-6 max-sm:w-5 max-2xl:mt-10 mt-14"
           />
           <p className="">Gestión</p>
           <p>
