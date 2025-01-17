@@ -7,7 +7,7 @@ export default function Form() {
     contactName: string;
     email: string;
     contactVia: string;
-    presupuesto: string;
+
     details: string;
   }
   const { register, handleSubmit } = useForm<formValues>();
