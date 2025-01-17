@@ -18,6 +18,7 @@ declare module "nextjs-routes" {
     | StaticRoute<"/new/header">
     | StaticRoute<"/new">
     | StaticRoute<"/new/mediakit">
+    | StaticRoute<"/new/our-team">
     | StaticRoute<"/new/roster">
     | StaticRoute<"/onboarding">
     | StaticRoute<"/our-services">
