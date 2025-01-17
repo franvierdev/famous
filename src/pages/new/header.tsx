@@ -35,15 +35,15 @@ export default function Header() {
             className="place-self-start "
           />
         </div>
-        <div className="flex justify-center  ">
+        <div className="flex justify-center ml-28 ">
           <Image
             src={"/assets/images/navbar-vector.png"}
             width={482}
             height={171}
             alt="vector-navbar"
-            className="absolute mt-8  ml-20"
+            className="absolute mt-8  "
           />
-          <div className="flex  gap-6 z-10 ml-20">
+          <div className="flex  gap-6 z-10 ">
             <Link href={"/"} className=" text-2xl wave-underline-1">
               nuestra casa
             </Link>
@@ -82,10 +82,19 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <div className="flex  gap-4 pt-4 ">
+        <div className="flex  gap-6 pt-4 ">
           <Link href={"/"} className="max-sm:w-36">
             <Image
-              src={"/assets/images/hablemos-button.png"}
+              src={"/assets/images/new/whatsapp-icon.png"}
+              alt="/"
+              width={102 / 2}
+              height={104 / 2}
+              className=""
+            />
+          </Link>
+          <Link href={"/"} className="max-sm:w-36">
+            <Image
+              src={"/assets/images/new/hablemos-button.png"}
               alt="/"
               width={170}
               height={106}

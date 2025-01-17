@@ -9,12 +9,12 @@ export default function Form() {
           src={"/assets/images/new/pink-splat.png"}
           alt="/"
           width={3468 / 2}
-          height={4212 / 2}
-          className="absolute mt-20 "
+          height={1838 / 2}
+          className="absolute -mt-20 "
         />
         <div className=" bg-[#EFDEC6] text-[#EFDEC6] h-screen  max-w-3xl mx-auto   ">
           <form className="flex flex-col items-center relative ">
-            <div className="absolute mt-48 w-full flex flex-col ">
+            <div className="absolute mt-32 w-full flex flex-col ">
               <h1 className="font-bold text-5xl  italic max-w-xs self-center text-center leading-tight">
                 ¡TRABAJEMOS JUNTOS!
               </h1>
