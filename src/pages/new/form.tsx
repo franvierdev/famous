@@ -1,18 +1,54 @@
 import Header from "./header";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { useMutation } from "react-query";
 export default function Form() {
   interface formValues {
     companyName: string;
     contactName: string;
     email: string;
     contactVia: string;
-    details: string;
+    details?: string;
   }
+
   const { register, handleSubmit } = useForm<formValues>();
-  const onSubmit = (data: formValues) => {
-    console.log(data);
+
+  const mutate = useMutation<unknown, Error, formValues>(
+    async (data) => {
+      const response = await fetch(
+        "https://fm-web-testing.famosos.com/api/v1/leads",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("no hay respuesta");
+      }
+
+      return response.json();
+    },
+    {
+      onError: (error) => {
+        console.error("Error al crear lead:", error);
+      },
+    }
+  );
+
+  const onSubmit = async (data: formValues) => {
+    try {
+      await mutate.mutateAsync(data);
+      console.log(data);
+      alert("Exito");
+    } catch (error) {
+      console.error("Error al enviar formulario", error);
+    }
   };
+
   return (
     <div className="bg-[#EFDEC6] text-black font-bold">
       <Header />
@@ -34,7 +70,7 @@ export default function Form() {
                 ¡TRABAJEMOS JUNTOS!
               </h1>
               <div className="border-b flex flex-col text-2xl mt-10 ">
-                <label htmlFor="companyName">companyName</label>
+                <label htmlFor="companyName">Empresa</label>
                 <input
                   className=" bg-transparent focus:outline-none  "
                   type="text"
@@ -52,7 +88,7 @@ export default function Form() {
                 />
               </div>
               <div className="border-b flex flex-col text-2xl mt-10 ">
-                <label htmlFor="email">E-mail (companyNamerial)</label>
+                <label htmlFor="email">E-mail</label>
                 <input
                   className=" bg-transparent focus:outline-none  "
                   type="text"
