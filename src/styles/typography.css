@@ -1,71 +1,63 @@
 @font-face {
   font-display: swap;
-  font-family: "Circular Std";
-  src: url("/assets/fonts/CircularStd-Bold.woff2") format("woff2"),
-    url("/assets/fonts/CircularStd-Bold.woff") format("woff");
+  font-family: "Albert Sans";
+  src: url("/assets/fonts/AlbertSans-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-display: swap;
-  font-family: "Circular Std";
-  src: url("/assets/fonts/CircularStd-Black.woff2") format("woff2"),
-    url("/assets/fonts/CircularStd-Black.woff") format("woff");
+  font-family: "Albert Sans";
+  src: url("/assets/fonts/AlbertSans-Black.ttf");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-display: swap;
-  font-family: "Circular Std";
-  src: url("/assets/fonts/CircularStd-BoldItalic.woff2") format("woff2"),
-    url("/assets/fonts/CircularStd-BoldItalic.woff") format("woff");
+  font-family: "Albert Sans";
+  src: url("/assets/fonts/AlbertSans-BoldItalic.ttf");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
   font-display: swap;
-  font-family: "Circular Std";
-  src: url("/assets/fonts/CircularStd-BlackItalic.woff2") format("woff2"),
-    url("/assets/fonts/CircularStd-BlackItalic.woff") format("woff");
+  font-family: "Albert Sans";
+  src: url("/assets/fonts/AlbertSans-BlackItalic.ttf");
   font-weight: 900;
   font-style: italic;
 }
 
 @font-face {
   font-display: swap;
-  font-family: "Circular Std";
-  src: url("/assets/fonts/CircularStd-Book.woff2") format("woff2"),
-    url("/assets/fonts/CircularStd-Book.woff") format("woff");
+  font-family: "Albert Sans";
+  src: url("/assets/fonts/AlbertSans-Book.ttf");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-display: swap;
-  font-family: "Circular Std";
-  src: url("/assets/fonts/CircularStd-BookItalic.woff2") format("woff2"),
-    url("/assets/fonts/CircularStd-BookItalic.woff") format("woff");
+  font-family: "Albert Sans";
+  src: url("/assets/fonts/AlbertSans-BookItalic.ttf");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-display: swap;
-  font-family: "Circular Std";
-  src: url("/assets/fonts/CircularStd-MediumItalic.woff2") format("woff2"),
-    url("/assets/fonts/CircularStd-MediumItalic.woff") format("woff");
+  font-family: "Albert Sans";
+  src: url("/assets/fonts/AlbertSans-MediumItalic.ttf");
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
   font-display: swap;
-  font-family: "Circular Std";
-  src: url("/assets/fonts/CircularStd-Medium.woff2") format("woff2"),
-    url("/assets/fonts/CircularStd-Medium.woff") format("woff");
+  font-family: "Albert Sans";
+  src: url("/assets/fonts/AlbertSans-Medium.ttf");
   font-weight: 500;
   font-style: normal;
 }

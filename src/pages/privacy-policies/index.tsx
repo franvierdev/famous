@@ -9,8 +9,8 @@ export default function TermsAndConditions() {
     <>
       <NextSeo
         title={formatMessage({
-          defaultMessage: "Términos y condiciones",
-          id: "o24Y39",
+          defaultMessage: "Politicas de privacidad",
+          id: "dcTUhK",
         })}
       />
       <div className="bg-[#EFDEC6] text-black">

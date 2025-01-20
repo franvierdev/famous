@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useIsClient } from "usehooks-ts";
 import Header from "@/modules/shared/components/header-new/header";
 import Image from "next/image";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { motion, useMotionValue, useTransform } from "motion/react";
 
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Mousewheel } from "swiper/modules";
+import { NextSeo } from "next-seo";
 
 const br = <br />;
 
@@ -106,10 +107,31 @@ const ourTeamMember = [
 
 export default function OurTeam() {
   const isClient = useIsClient();
+  const { formatMessage } = useIntl();
 
-  if (!isClient) return;
+  if (!isClient)
+    return (
+      <>
+        <NextSeo
+          title={formatMessage({
+            defaultMessage: "Nuestra familia",
+            id: "gDtzup",
+          })}
+        />
+      </>
+    );
 
-  return <_OurTeam />;
+  return (
+    <>
+      <NextSeo
+        title={formatMessage({
+          defaultMessage: "Nuestra familia",
+          id: "gDtzup",
+        })}
+      />
+      <_OurTeam />
+    </>
+  );
 }
 
 function _OurTeam() {

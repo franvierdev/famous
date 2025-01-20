@@ -1,19 +1,23 @@
 import Header from "@/modules/shared/components/header-new/header";
+import { NextSeo } from "next-seo";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { useIntl } from "react-intl";
 import { useMutation } from "react-query";
-export default function Form() {
-  interface formValues {
-    companyName: string;
-    contactName: string;
-    email: string;
-    contactVia: string;
-    details?: string;
-  }
 
-  const { register, handleSubmit } = useForm<formValues>();
+interface FormValues {
+  companyName: string;
+  contactName: string;
+  email: string;
+  contactVia: string;
+  details?: string;
+}
 
-  const mutate = useMutation<unknown, Error, formValues>(
+export default function ContactUs() {
+  const { formatMessage } = useIntl();
+  const { register, handleSubmit } = useForm<FormValues>();
+
+  const mutate = useMutation<unknown, Error, FormValues>(
     async (data) => {
       const response = await fetch(
         "https://fm-web-testing.famosos.com/api/v1/leads",
@@ -39,7 +43,7 @@ export default function Form() {
     }
   );
 
-  const onSubmit = async (data: formValues) => {
+  const onSubmit = async (data: FormValues) => {
     try {
       await mutate.mutateAsync(data);
       console.log(data);
@@ -51,6 +55,12 @@ export default function Form() {
 
   return (
     <div className="bg-[#EFDEC6] w-full  h-screen text-black font-bold">
+      <NextSeo
+        title={formatMessage({
+          defaultMessage: "Contactanos",
+          id: "gYhLLT",
+        })}
+      />
       <Header />
       <div className="max-w-[1734px]  mx-auto  ">
         <Image
@@ -59,6 +69,7 @@ export default function Form() {
           width={3468 / 2}
           height={1838 / 2}
           className="absolute -mt-20   "
+          priority
         />
         <div className="  text-[#EFDEC6]   max-w-3xl mx-auto    ">
           <form

@@ -27,8 +27,9 @@ const messagesByLocale: Record<Locale, IntlConfig["messages"]> = {
 // Para internacionalizar, mover los children del <IntlProvider /> a un componente para poder usar los hooks de Intl.
 const defaultTitle = "Famosos Management";
 
+const queryClient = new QueryClient();
+
 export default function App({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient();
   const router = useRouter();
   const [hasOpenedModal, setHasOpenedModal] = useState(false);
   const [knowMoreVideoModalIsOpen, setKnowMoreVideoModalIsOpen] =
@@ -45,16 +46,16 @@ export default function App({ Component, pageProps }: AppProps) {
           titleTemplate={`${defaultTitle} | %s`}
           defaultTitle={defaultTitle}
           description="Descubre Famosos Management."
-          openGraph={{
-            images: [
-              {
-                url: "/assets/images/og-image.png",
-                alt: defaultTitle,
-                width: 1200,
-                height: 630,
-              },
-            ],
-          }}
+          // openGraph={{
+          //   images: [
+          //     {
+          //       url: "/assets/images/og-image.png",
+          //       alt: defaultTitle,
+          //       width: 1200,
+          //       height: 630,
+          //     },
+          //   ],
+          // }}
         />
         <Component {...pageProps} />
         <input

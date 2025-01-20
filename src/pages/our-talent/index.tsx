@@ -1,3 +1,4 @@
+import Header from "@/modules/shared/components/header-new/header";
 import {
   AnimatePresence,
   motion,
@@ -6,9 +7,11 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
+import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { useIntl } from "react-intl";
 import { useIsClient } from "usehooks-ts";
 
 const roster = [
@@ -40,7 +43,7 @@ const roster = [
     profileUrl: "https://july.bio/familialopez",
     keyword: "Comedia",
     backgroundColor: "#EFDEC6",
-    profileLinkButtonType: "beige",
+    profileLinkButtonType: "morada",
   },
   {
     fullName: "Mari Gutierrez",
@@ -92,93 +95,115 @@ const roster = [
 
 type Roster = (typeof roster)[number];
 
-export default function Roster() {
+export default function OurTalent() {
   const isClient = useIsClient();
   const [snappedItem, setSnappedItem] = useState(roster[0]);
   const containerRef = useRef(null);
+  const { formatMessage } = useIntl();
 
-  if (!isClient) return;
+  if (!isClient)
+    return (
+      <>
+        <NextSeo
+          title={formatMessage({
+            defaultMessage: "Nuestro talento",
+            id: "i5UhVM",
+          })}
+        />
+      </>
+    );
 
   return (
-    <motion.main
-      className="snap-y snap-mandatory overflow-y-auto h-screen bg-[#AC4A86]"
-      style={{ backgroundColor: snappedItem.backgroundColor }}
-      ref={containerRef}
-    >
-      {roster.map((roster) => (
-        <RosterCard
-          key={roster.fullName}
-          roster={roster}
-          onSnapChange={(isSnapped) => isSnapped && setSnappedItem(roster)}
-          containerRef={containerRef}
-        />
-      ))}
-      <div className="flex place-items-center fixed inset-y-0 right-0 text-black font-bold pr-8">
-        <motion.span
-          className="px-8 text-[5.125rem] rounded-full border border-current italic mt-16 -mr-32 relative z-30"
-          style={{ backgroundColor: snappedItem.backgroundColor }}
-          key={snappedItem.keyword}
-        >
-          {snappedItem.keyword}
-        </motion.span>
-        <Image
-          src={snappedItem.imageUrl}
-          alt={snappedItem.fullName}
-          className="w-[437.42px] -mr-44 relative z-20"
-        />
-        <div className="relative">
-          <Image
-            src={require("public/assets/images/phone-mockup.png")}
-            className="w-[24.5644rem] z-10 relative"
-            alt="Mockup Teléfono"
-          />
-          <AnimatePresence>
-            <motion.div
-              className="absolute left-6 top-4 right-[1.375rem] bottom-[1.125rem] rounded-[2rem] overflow-hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              key={snappedItem.mainMedia.url}
-            >
-              {snappedItem.mainMedia.type === "video" ? (
-                <video
-                  src={snappedItem.mainMedia.url}
-                  className="w-full h-full object-cover"
-                  muted
-                  autoPlay
-                  loop
-                />
-              ) : (
-                <img
-                  src={snappedItem.mainMedia.url}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
-              )}
-            </motion.div>
-          </AnimatePresence>
+    <>
+      <NextSeo
+        title={formatMessage({
+          defaultMessage: "Nuestro talento",
+          id: "i5UhVM",
+        })}
+      />
+      <motion.main
+        className="snap-y snap-mandatory overflow-y-auto h-screen bg-[#AC4A86]"
+        style={{ backgroundColor: snappedItem.backgroundColor }}
+        ref={containerRef}
+      >
+        <div className="fixed w-full text-black z-50">
+          <Header />
         </div>
-        {/* <div className="w-[768px] h-[898px]">
-          <AnimatePresence>
-            <motion.div
-              key={snappedItem.imageUrl}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+        {roster.map((roster) => (
+          <RosterCard
+            key={roster.fullName}
+            roster={roster}
+            onSnapChange={(isSnapped) => isSnapped && setSnappedItem(roster)}
+            containerRef={containerRef}
+          />
+        ))}
+        <div className="flex place-items-center fixed inset-y-0 right-0 text-black font-bold pr-8 pt-24">
+          <motion.span
+            className="px-8 text-[5.125rem] rounded-full border border-current italic mt-16 -mr-32 relative z-30"
+            style={{ backgroundColor: snappedItem.backgroundColor }}
+            key={snappedItem.keyword}
+          >
+            {snappedItem.keyword}
+          </motion.span>
+          <Image
+            src={snappedItem.imageUrl}
+            alt={snappedItem.fullName}
+            className="w-[437.42px] -mr-44 relative z-20"
+          />
+          <div className="relative">
+            <Image
+              src={require("public/assets/images/phone-mockup.png")}
+              className="w-[24.5644rem] z-10 relative"
+              alt="Mockup Teléfono"
+            />
+            <AnimatePresence>
+              <motion.div
+                className="absolute left-6 top-4 right-[1.375rem] bottom-[1.125rem] rounded-[2rem] overflow-hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                key={snappedItem.mainMedia.url}
+              >
+                {snappedItem.mainMedia.type === "video" ? (
+                  <video
+                    src={snappedItem.mainMedia.url}
+                    className="w-full h-full object-cover"
+                    muted
+                    autoPlay
+                    loop
+                  />
+                ) : (
+                  <img
+                    src={snappedItem.mainMedia.url}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+          {/* <div className="w-[768px] h-[898px]">
+        <AnimatePresence>
+          <motion.div
+            key={snappedItem.imageUrl}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0"
+          >
+            <img
+              src={snappedItem.imageUrl}
+              alt=""
+              width={1536 / 2}
+              height={1796 / 2}
               className="absolute inset-0"
-            >
-              <img
-                src={snappedItem.imageUrl}
-                alt=""
-                width={1536 / 2}
-                height={1796 / 2}
-                className="absolute inset-0"
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div> */}
-      </div>
-    </motion.main>
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div> */}
+        </div>
+      </motion.main>
+    </>
   );
 }
 
@@ -211,7 +236,7 @@ function RosterCard({
   useMotionValueEvent(isSnapped, "change", onSnapChange);
 
   return (
-    <div className="text-black font-bold h-screen snap-center [perspective:_500px] flex flex-col justify-center">
+    <div className="text-black font-bold h-screen snap-center [perspective:_500px] flex flex-col justify-center pt-24">
       <div className="flex items-center max-w-[1734px] px-8" ref={ref}>
         <motion.div
           className="flex flex-col gap-4 leading-tight"

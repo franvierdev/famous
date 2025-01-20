@@ -11,20 +11,13 @@ declare module "nextjs-routes" {
   } from "nextjs";
 
   export type Route =
-    | StaticRoute<"/about-us">
+    | StaticRoute<"/contact-us">
     | StaticRoute<"/">
-    | StaticRoute<"/new/form">
-    | StaticRoute<"/new">
-    | StaticRoute<"/new/mediakit">
-    | StaticRoute<"/new/our-team">
-    | StaticRoute<"/new/roster">
-    | StaticRoute<"/onboarding">
-    | StaticRoute<"/our-services">
-    | StaticRoute<"/success-cases">
-    | DynamicRoute<"/success-cases/[campaign-slug]", { "campaign-slug": string }>
-    | StaticRoute<"/technology">
-    | StaticRoute<"/terms-and-conditions">
-    | StaticRoute<"/test">;
+    | StaticRoute<"/our-talent">
+    | StaticRoute<"/our-talent/mediakit">
+    | StaticRoute<"/our-team">
+    | StaticRoute<"/privacy-policies">
+    | StaticRoute<"/terms-and-conditions">;
 
   interface StaticRoute<Pathname> {
     pathname: Pathname;

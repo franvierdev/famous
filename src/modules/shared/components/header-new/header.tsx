@@ -4,29 +4,24 @@ import { useIntl } from "react-intl";
 import { Locale } from "nextjs-routes";
 import { useRouter } from "next/router";
 
+const localesData: Record<Locale, { name: string }> = {
+  "es-MX": {
+    name: "es",
+  },
+  "en-US": {
+    name: "en",
+  },
+};
+
 export default function Header() {
   const router = useRouter();
   const { pathname, query, asPath } = router;
   const { formatMessage } = useIntl();
 
-  const localesData: Record<Locale, { name: string }> = {
-    "es-MX": {
-      name: formatMessage({
-        defaultMessage: "Español",
-        id: "dX8jTq",
-      }),
-    },
-    "en-US": {
-      name: formatMessage({
-        defaultMessage: "Inglés",
-        id: "NDZDj1",
-      }),
-    },
-  };
   return (
     <header className="  flex max-sm:flex-col max-sm:pt-6 justify-between text-2xl place-items-center pb-16 max-w-[1734px] px-8  mx-auto ">
-      <div className="navbar flex justify-between ">
-        <div className="flex-1 px-2 lg:flex-none">
+      <div className="navbar flex justify-between font-bold">
+        <Link href="/" className="flex-1 px-2 lg:flex-none">
           <Image
             src={"/assets/images/fm-logo.png"}
             alt="/"
@@ -34,7 +29,7 @@ export default function Header() {
             width={144}
             className="place-self-start "
           />
-        </div>
+        </Link>
         <div className="flex justify-center ml-36 ">
           <Image
             src={"/assets/images/navbar-vector.png"}
@@ -44,7 +39,7 @@ export default function Header() {
             className="absolute mt-8  "
           />
           <div className="flex  gap-6 z-10 ">
-            <Link href={"/"} className=" text-2xl wave-underline-1">
+            <Link href="/" className=" text-2xl wave-underline-1">
               nuestra casa
             </Link>
             <div className="dropdown dropdown-end dropdown-hover">
@@ -64,7 +59,7 @@ export default function Header() {
                 />
                 <li className="wave-underline-1 mt-1  w-36 ">
                   <Link
-                    href={"/"}
+                    href={"/our-talent"}
                     className=" self-center  hover:bg-transparent hover:text-[#EFDEC6]"
                   >
                     talentos
@@ -72,7 +67,7 @@ export default function Header() {
                 </li>
                 <li className="wave-underline-1 w-36 ">
                   <Link
-                    href={"/"}
+                    href={"/our-team"}
                     className="self-center hover:bg-transparent hover:text-[#EFDEC6]"
                   >
                     equipo
@@ -92,7 +87,7 @@ export default function Header() {
               className=""
             />
           </Link>
-          <Link href={"/"} className="max-sm:w-36">
+          <Link href={"/contact-us"} className="max-sm:w-36">
             <Image
               src={"/assets/images/new/hablemos-button.png"}
               alt="/"
