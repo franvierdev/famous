@@ -35,7 +35,7 @@ export default function Header() {
             className="place-self-start "
           />
         </div>
-        <div className="flex justify-center ml-28 ">
+        <div className="flex justify-center ml-36 ">
           <Image
             src={"/assets/images/navbar-vector.png"}
             width={482}

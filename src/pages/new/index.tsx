@@ -2,8 +2,8 @@
 import Image from "next/image";
 
 import { useState } from "react";
-import Footer from "./footer";
-import Header from "./header";
+import Footer from "../../modules/shared/components/footer-new/footer";
+import Header from "@/modules/shared/components/header-new/header";
 
 export default function New() {
   const [activeTab, setActiveTab] = useState(0);
@@ -13,19 +13,16 @@ export default function New() {
       id: 0,
       title: <p className="mb-4">para las marcas</p>,
       content: (
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center max-2xl:gap-4 gap-10">
           <Image
             src={"/assets/images/new/estrella.png"}
             alt="/"
             width={63 / 2}
             height={63 / 2}
-            className="  max-sm:mt-6 max-sm:w-5  mt-14"
+            className="  max-sm:mt-6 max-sm:w-5  mt-20"
           />
-          <p className="">Consultoria</p>
-          <p>
-            Asesoramiento para conectar efectivamente con la comunidad hispana y
-            estrategias de campaña dirigidas.
-          </p>
+          <p className="text-4xl max-w-xs px-10">Gestión de Campañas</p>
+
           <Image
             src={"/assets/images/new/estrella.png"}
             alt="/"
@@ -33,10 +30,11 @@ export default function New() {
             height={63 / 2}
             className="max-sm:w-5 "
           />
-          <p>Monitoreo y Análisis</p>
-          <p>
-            Seguimiento y análisis de las campañas y colaboraciones para medir
-            el impacto y ajustar las estrategias.
+
+          <p className="text-2xl">
+            Gestión integral de colaboraciones, desde la distribución del
+            contenido hasta la ejecución, garantizando campañas exitosas y sin
+            complicaciones.fluida y exitosa.
           </p>
         </div>
       ),
@@ -45,20 +43,16 @@ export default function New() {
       id: 1,
       title: <p className="mb-4">para los talentos</p>,
       content: (
-        <div className="flex  flex-col items-center max-2xl:gap-2  gap-3  ">
+        <div className="flex  flex-col items-center   gap-10  ">
           <Image
             src={"/assets/images/new/estrella.png"}
             alt="/"
             width={63 / 2}
             height={63 / 2}
-            className="  max-sm:mt-6 max-sm:w-5 max-2xl:mt-10 mt-14"
+            className="  max-sm:mt-6 max-sm:w-5 max-2xl:mt-10 mt-20"
           />
-          <p className="">Gestión</p>
-          <p>
-            Representación integral para talentos en sus redes sociales,
-            incluyendo negociación de contratos, planificación de carrera y
-            desarrollo de marca personal.
-          </p>
+          <p className="text-4xl max-w-sm ">Conexión Estratégica de Talentos</p>
+
           <Image
             src={"/assets/images/new/estrella.png"}
             alt="/"
@@ -66,10 +60,11 @@ export default function New() {
             height={63 / 2}
             className="max-sm:w-5 "
           />
-          <p>Booking</p>
-          <p>
-            Comercialización de talentos para ofrecer campañas en sus redes
-            sociales, incluyendo la gestión de la campaña.
+
+          <p className="text-2xl max-w-sm">
+            Conectamos a los influencers adecuados con las marcas para crear
+            colaboraciones auténticas y efectivas que resuenen con la audiencia
+            hispana.
           </p>
         </div>
       ),
@@ -148,7 +143,7 @@ export default function New() {
           </ul>
           <div
             id="default-tab-content"
-            className=" flex flex-col max-w-md items-center text-center text-[#EFDEC6] z-10  max-sm:mt-6 px-9 max-sm:px-20 max-sm:gap-2  lg:gap-3 xl:gap-3 2xl:-gap-6 max-sm:text-base max-[1734px]:text-[1.4vw] text-[1.4rem] "
+            className=" flex flex-col max-w-lg items-center text-center text-[#EFDEC6] z-10  max-sm:mt-6 px-9 max-sm:px-20 max-sm:gap-2  lg:gap-3  2xl:-gap-6 max-sm:text-base max-[1734px]:text-[1.4vw] text-[1.4rem] "
           >
             <Image
               src={"/assets/images/new/nube-negra.png"}
@@ -163,7 +158,7 @@ export default function New() {
       </div>
       <div className=" flex flex-col mx-auto  items-center max-sm:mt-64 sm:mt-52">
         <Image
-          src={"/assets/images/new/pink-splat.png"}
+          src={"/assets/images/new/pink-splat-full.png"}
           alt="/"
           width={3468 / 2}
           height={4212 / 2}

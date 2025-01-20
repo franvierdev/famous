@@ -1,4 +1,4 @@
-import Header from "./header";
+import Header from "@/modules/shared/components/header-new/header";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useIsClient } from "usehooks-ts";
-import Header from "./header";
+import Header from "@/modules/shared/components/header-new/header";
 import Image from "next/image";
 import { FormattedMessage } from "react-intl";
 import { motion, useMotionValue, useTransform } from "motion/react";
