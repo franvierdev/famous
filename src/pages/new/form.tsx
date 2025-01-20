@@ -50,17 +50,17 @@ export default function Form() {
   };
 
   return (
-    <div className="bg-[#EFDEC6] text-black font-bold">
+    <div className="bg-[#EFDEC6] w-full  h-screen text-black font-bold">
       <Header />
-      <div className="max-w-[1734px] mx-auto  ">
+      <div className="max-w-[1734px]  mx-auto  ">
         <Image
           src={"/assets/images/new/pink-splat.png"}
           alt="/"
           width={3468 / 2}
           height={1838 / 2}
-          className="absolute -mt-20 "
+          className="absolute -mt-20   "
         />
-        <div className=" bg-[#EFDEC6] text-[#EFDEC6] h-screen  max-w-3xl mx-auto   ">
+        <div className="  text-[#EFDEC6]   max-w-3xl mx-auto    ">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col items-center relative "
