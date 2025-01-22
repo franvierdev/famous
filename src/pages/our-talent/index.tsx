@@ -157,7 +157,7 @@ export default function OurTalent() {
           <Image
             src={snappedItem.imageUrl}
             alt={snappedItem.fullName}
-            className="w-[437.42px] -mr-44 relative z-20 pointer-events-none"
+            className="w-[27.3388rem] -mr-44 relative z-20 pointer-events-none"
           />
           <div className="relative pointer-events-none">
             <Image
@@ -244,8 +244,8 @@ function RosterCard({
   useMotionValueEvent(isSnapped, "change", onSnapChange);
 
   return (
-    <div className="text-black font-bold h-screen snap-center [perspective:_500px] flex flex-col justify-center pt-24">
-      <div className="flex items-center max-w-[1734px] px-8" ref={ref}>
+    <div className="text-black font-bold h-screen snap-center [perspective:_31.25rem] flex flex-col justify-center pt-24">
+      <div className="flex items-center px-8" ref={ref}>
         <motion.div
           className="flex flex-col gap-4 leading-tight"
           style={{ y, opacity }}
@@ -266,15 +266,19 @@ function RosterCard({
             ))}
           </div>
           <div className="max-w-max flex text-center mt-4">
-            <a href={roster.profileUrl} target="_blank">
+            <a
+              href={roster.profileUrl}
+              target="_blank"
+              className="flex items-center justify-center relative"
+            >
               <Image
                 src={`/assets/images/new/roster/nube-${roster.profileLinkButtonType}.png`}
                 alt="/"
-                width={374 / 2}
-                height={198 / 2}
-                className=" "
+                width={187}
+                height={99}
+                className="w-48 h-24"
               />
-              <p className="text-[1.6rem] -mt-16 -ml-2">ver más</p>
+              <p className="text-[1.6rem] absolute">ver más</p>
             </a>
           </div>
         </motion.div>

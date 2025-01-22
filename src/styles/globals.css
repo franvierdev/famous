@@ -4,6 +4,10 @@
 @tailwind utilities;
 
 @layer components {
+  :root {
+    @apply text-[0.925vw] min-[1734px]:text-[16px];
+  }
+
   .wave-underline {
     @apply flex flex-col gap-2 after:h-3 after:bg-[url('/assets/images/new/underline.png')] after:bg-[length:160px_12px] after:bg-repeat-x after:invisible hover:after:visible  focus:after:invisible;
   }
