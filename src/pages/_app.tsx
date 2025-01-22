@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-import "@/styles/parallax.css";
 
 import type { AppProps } from "next/app";
 import { IntlConfig, IntlProvider } from "react-intl";

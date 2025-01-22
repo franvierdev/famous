@@ -101,6 +101,16 @@ export default function OurTalent() {
   const containerRef = useRef(null);
   const { formatMessage } = useIntl();
 
+  useEffect(() => {
+    document.documentElement.classList.add("snap-y");
+    document.documentElement.classList.add("snap-mandatory");
+
+    return () => {
+      document.documentElement.classList.remove("snap-y");
+      document.documentElement.classList.remove("snap-mandatory");
+    };
+  }, []);
+
   if (!isClient)
     return (
       <>
@@ -122,9 +132,8 @@ export default function OurTalent() {
         })}
       />
       <motion.main
-        className="snap-y snap-mandatory overflow-y-auto h-screen bg-[#AC4A86]"
+        className="bg-[#AC4A86]"
         style={{ backgroundColor: snappedItem.backgroundColor }}
-        ref={containerRef}
       >
         <div className="fixed w-full text-black z-50">
           <Header />
@@ -148,9 +157,9 @@ export default function OurTalent() {
           <Image
             src={snappedItem.imageUrl}
             alt={snappedItem.fullName}
-            className="w-[437.42px] -mr-44 relative z-20"
+            className="w-[437.42px] -mr-44 relative z-20 pointer-events-none"
           />
-          <div className="relative">
+          <div className="relative pointer-events-none">
             <Image
               src={require("public/assets/images/phone-mockup.png")}
               className="w-[24.5644rem] z-10 relative"
@@ -223,7 +232,6 @@ function RosterCard({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    container: containerRef,
   });
   const y = useParallax(scrollYProgress, 150);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.2, 1, 0.2]);

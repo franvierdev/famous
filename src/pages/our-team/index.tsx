@@ -150,8 +150,8 @@ function _OurTeam() {
           thresholdDelta: 10,
         }}
         modules={[Mousewheel]}
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        onProgress={(_, progress) => {
+        onSwiper={(swiper: SwiperClass) => (swiperRef.current = swiper)}
+        onProgress={(_: SwiperClass, progress: number) => {
           return swiperProgress.set(progress);
         }}
       >
