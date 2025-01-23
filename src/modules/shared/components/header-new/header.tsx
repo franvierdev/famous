@@ -19,9 +19,9 @@ export default function Header() {
   const { formatMessage } = useIntl();
 
   return (
-    <header className="  flex max-sm:flex-col max-sm:pt-6 justify-between text-2xl place-items-center pb-16 max-w-[1734px] px-8  mx-auto ">
+    <header className="  flex  max-sm:pt-6 justify-between text-2xl place-items-center pb-16 max-w-[1734px] px-8  mx-auto ">
       <div className="navbar flex justify-between font-bold">
-        <Link href="/" className="flex-1 px-2 lg:flex-none">
+        <Link href="/" className="">
           <Image
             src={"/assets/images/fm-logo.png"}
             alt="/"
@@ -55,7 +55,7 @@ export default function Header() {
                   width={355.5}
                   height={216.5}
                   alt="vector-navbar"
-                  className=" absolute w-[22.21875rem] h-[13.53125rem] -mt-6 -mr-[90px] "
+                  className=" absolute w-[22.21875rem] h-[13.53125rem] -mt-6 -mr-[5.625rem] "
                 />
                 <li className="wave-underline-1 mt-1  w-36 ">
                   <Link
