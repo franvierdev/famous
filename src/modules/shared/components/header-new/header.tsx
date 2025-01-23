@@ -27,7 +27,7 @@ export default function Header() {
             alt="/"
             height={48}
             width={144}
-            className="place-self-start "
+            className="place-self-start w-36 h-12"
           />
         </Link>
         <div className="flex justify-center ml-36 ">
@@ -36,7 +36,7 @@ export default function Header() {
             width={482}
             height={171}
             alt="vector-navbar"
-            className="absolute mt-8  "
+            className="absolute mt-8 w-[30.125rem] h-[10.6875rem] "
           />
           <div className="flex  gap-6 z-10 ">
             <Link href="/" className=" text-2xl wave-underline-1">
@@ -52,10 +52,10 @@ export default function Header() {
               >
                 <Image
                   src={"/assets/images/new/pink-cloud.png"}
-                  width={711}
-                  height={433}
+                  width={355.5}
+                  height={216.5}
                   alt="vector-navbar"
-                  className=" absolute -mt-4 -mr-[90px] "
+                  className=" absolute w-[22.21875rem] h-[13.53125rem] -mt-6 -mr-[90px] "
                 />
                 <li className="wave-underline-1 mt-1  w-36 ">
                   <Link
@@ -82,9 +82,9 @@ export default function Header() {
             <Image
               src={"/assets/images/new/whatsapp-icon.png"}
               alt="/"
-              width={102 / 2}
-              height={104 / 2}
-              className=""
+              width={51}
+              height={52}
+              className="w-[3.1875rem] h-[3.25rem]"
             />
           </Link>
           <Link href={"/contact-us"} className="max-sm:w-36">
@@ -93,7 +93,7 @@ export default function Header() {
               alt="/"
               width={170}
               height={106}
-              className=""
+              className="w-[10.625rem] h-[6.625rem]"
             />
           </Link>
           <div
