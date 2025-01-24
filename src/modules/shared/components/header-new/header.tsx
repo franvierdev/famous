@@ -77,7 +77,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <div className="flex  gap-6 pt-4 ">
+        <div className="flex gap-6 pt-4">
           <Link href={"/"} className="max-sm:w-36">
             <Image
               src={"/assets/images/new/whatsapp-icon.png"}
